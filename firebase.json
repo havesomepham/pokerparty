@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "pokerparty",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "us-east1"
+      }
+    }
+  ]
+}
