@@ -19,7 +19,7 @@ def deal_cards(num_players, deck):
         for player in range(num_players):
             hands[player].append(deck.pop())
     return hands
-=
+
 # Function to generate community cards (flop, turn, river)
 def generate_community_cards(deck):
     flop = [deck.pop() for _ in range(3)]

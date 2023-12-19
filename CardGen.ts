@@ -79,16 +79,16 @@ function cardToString(card: Card): string {
   
     switch (card.suit) {
         case Suit.Hearts:
-            suitSymbol = "♡";
+            suitSymbol = "H";
             break;
         case Suit.Diamonds:
-            suitSymbol = "♢";
+            suitSymbol = "D";
             break;
         case Suit.Clubs:
-            suitSymbol = "♣";
+            suitSymbol = "C";
             break;
         case Suit.Spades:
-            suitSymbol = "♠";
+            suitSymbol = "S";
             break;
         default:
             suitSymbol = "";
