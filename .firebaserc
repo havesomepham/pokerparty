@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pokerparty-a1760": {
+      "hosting": {
+        "pokerparty": [
+          "pokerparty-a1760"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pokerparty-a1760"
+  }
+}
