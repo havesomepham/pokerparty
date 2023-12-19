@@ -1,5 +1,6 @@
 *-debug.log
 .runtimeconfig.json
+dist/
 
 # Logs
 logs
