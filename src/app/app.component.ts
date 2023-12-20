@@ -15,12 +15,20 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   firestore: Firestore = inject(Firestore)
-  items$: Observable<any[]>;
+  items$: Observable<any[]> | undefined
 
+  // uncommenting the contents causes the app to crash whenever anything is changed
   constructor() {
-    const aCollection = collection(this.firestore, 'items')
-    this.items$ = collectionData(aCollection);
+    // const aCollection = collection(this.firestore, 'items')
+    // this.items$ = collectionData(aCollection)
   }
+
+  ngOnInit(): void {
+    const aCollection = collection(this.firestore, 'items')
+    this.items$ = collectionData(aCollection)
+  }
+
+
   // title = 'pokerparty';
   todo = ['TODO 1'];
   inProgress = ['IP 1'];
