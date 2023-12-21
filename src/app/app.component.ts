@@ -22,7 +22,7 @@ export class AppComponent {
 	dealerService: DealerService = inject(DealerService);
 	playerList: Player[] = [];
 
-	constructor() {
+	ngOnInit() {
 		this.playerList = this.dealerService.getPlayerList();
 		this.dealerService.shuffleDeck();
 		this.dealerService.dealHands();
