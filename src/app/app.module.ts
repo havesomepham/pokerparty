@@ -16,9 +16,11 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { CardComponent } from './card/card.component';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CardComponent, PlayerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
