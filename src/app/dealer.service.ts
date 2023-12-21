@@ -25,20 +25,17 @@ export class DealerService {
 	];
 
 	deck: Card[] = [];
+	communinty: Card[] = [];
 
 	getPlayerList(): Player[] {
 		return this.playerList;
 	}
 
 	// add the 52 cards (unshuffled) to this.deck
-  generateDeck(): void {
-    this.deck = [];
+	generateDeck(): void {
+		this.deck = [];
 		for (let suit = 0; suit < Object.keys(Suit).length / 2; suit++) {
-			for (
-				let rank = 2;
-				rank <= Object.keys(Rank).length / 2 + 1;
-				rank++
-			) {
+			for (let rank = 2; rank <= Object.keys(Rank).length / 2 + 1; rank++) {
 				this.deck.push({ suit, rank });
 			}
 		}
@@ -61,12 +58,10 @@ export class DealerService {
 		}
 	}
 
-	dealCommunityCards(deck: Card[]): Card[] {
-		const communityCards: Card[] = [];
+	dealCommunityCards(): void {
 		for (let i = 0; i < 5; i++) {
-			communityCards.push(deck.pop()!);
+			this.communinty.push(this.deck.pop()!);
 		}
-		return communityCards;
 	}
 
 	// evaluateHand(hand: Card[], communityCards: Card[]): { value: number; description: string } {

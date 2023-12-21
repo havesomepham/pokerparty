@@ -7,7 +7,7 @@ import { Card } from "../card";
 	styleUrls: ["./card.component.css"],
 })
 export class CardComponent {
-	@Input() card!: Card; // TODO is Input()
+	@Input() card!: Card;
 	rankString: string = "rank";
 	suitString: string = "suit";
 

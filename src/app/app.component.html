@@ -6,4 +6,5 @@
 <div class="content-wrapper">
   <br>
   <app-player *ngFor="let player of playerList" [player]="player"></app-player>
+  <app-community [community]="this.dealerService.communinty"></app-community>
 </div>

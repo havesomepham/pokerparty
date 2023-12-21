@@ -7,5 +7,5 @@ import { Player } from "../player";
 	styleUrl: "./player.component.css",
 })
 export class PlayerComponent {
-  @Input() player!: Player; // TODO check assertion, is Input() correct?
+  @Input() player!: Player;
 }

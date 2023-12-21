@@ -18,9 +18,10 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { CardComponent } from './card/card.component';
 import { PlayerComponent } from './player/player.component';
+import { CommunityComponent } from './community/community.component';
 
 @NgModule({
-  declarations: [AppComponent, CardComponent, PlayerComponent],
+  declarations: [AppComponent, CardComponent, PlayerComponent, CommunityComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
