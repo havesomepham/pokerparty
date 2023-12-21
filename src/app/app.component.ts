@@ -26,6 +26,5 @@ export class AppComponent {
 		this.playerList = this.dealerService.getPlayerList();
 		this.dealerService.shuffleDeck();
 		this.dealerService.dealHands();
-		console.log(this.dealerService.playerList);
 	}
 }

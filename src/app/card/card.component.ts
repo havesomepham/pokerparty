@@ -11,7 +11,7 @@ export class CardComponent {
 	rankString: string = "rank";
 	suitString: string = "suit";
 
-  ngOnChanges() {
+	ngOnChanges() {
 		// rank
 		switch (this.card.rank) {
 			case 11: {
@@ -56,9 +56,6 @@ export class CardComponent {
 			default: {
 				this.suitString = "";
 			}
-    }
-    
-    console.log(this.rankString);
-    console.log(this.suitString);
+		}
 	}
 }
