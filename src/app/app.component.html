@@ -7,4 +7,5 @@
   <br>
   <app-player *ngFor="let player of playerList" [player]="player"></app-player>
   <app-community [community]="this.dealerService.community"></app-community>
+  <h1 *ngFor="let player of winners">{{ player.name }} wins via {{ this.dealerService.scoreHand(player.hand).name }}</h1>
 </div>

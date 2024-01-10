@@ -9,17 +9,17 @@ import { PokerHandResult } from "./pokerHandResult";
 export class DealerService {
 	playerList: Player[] = [
 		{
-			id: 1,
+			id: 0,
 			name: "Shreyash",
 			hand: [],
 		},
 		{
-			id: 2,
+			id: 1,
 			name: "Ryder",
 			hand: [],
 		},
 		{
-			id: 3,
+			id: 2,
 			name: "Krishna",
 			hand: [],
 		},
@@ -65,12 +65,23 @@ export class DealerService {
 		}
 	}
 
-	// evaluateHand(hand: Card[], communityCards: Card[]): { value: number; description: string } {
-	//   // Your hand evaluation logic goes here
-	//   // This is a placeholder, you need to implement the actual hand evaluation algorithm
-	//   // and return a numeric value representing the strength of the hand
-	//   return { value: Math.random(), description: "Placeholder hand" };
-	// }
+	determineWinner(): Player[] {
+		let playerResults: any[] = []; // [id, result]
+		this.playerList.forEach((player) => {
+			playerResults.push([player.id, this.scoreHand(player.hand)]);
+		});
+		playerResults.sort((a: any, b: any) => {
+			return b[1].value - a[1].value;
+		});
+		let winners: Player[] = [];
+		// check for split pots
+		for (let i = 0; i < this.playerList.length; i++) {
+			if (playerResults[i][1].value == playerResults[0][1].value) {
+				winners.push(this.playerList[playerResults[i][0]]);
+			}
+		}
+		return winners;
+	}
 
 	scoreHand(hand: Card[]): PokerHandResult {
 		// return the best poker hand from a set or sets of cards

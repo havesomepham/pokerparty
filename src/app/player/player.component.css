@@ -14,5 +14,6 @@ h2 {
 
 .grid-container {
 	display: grid;
-	grid-template-columns: auto auto;
+	grid-template-columns: repeat(2, 150px);
+	justify-items: left;
 }

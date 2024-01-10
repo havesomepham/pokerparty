@@ -22,19 +22,13 @@ export class AppComponent {
 	// firestore: Firestore = inject(Firestore)
 	dealerService: DealerService = inject(DealerService);
 	playerList: Player[] = [];
+	winners: Player[] = [];
 
 	ngOnInit() {
 		this.playerList = this.dealerService.getPlayerList();
 		this.dealerService.shuffleDeck();
 		this.dealerService.dealHands();
 		this.dealerService.dealCommunityCards();
-
-		// TODO delete
-		this.dealerService.playerList.forEach((player) => {
-			let pokerHandResult: PokerHandResult = this.dealerService.scoreHand(
-				player.hand
-			);
-			console.log(pokerHandResult);
-		});
+		this.winners = this.dealerService.determineWinner();
 	}
 }
