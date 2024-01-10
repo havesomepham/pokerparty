@@ -3,7 +3,7 @@ import { Card } from "../card";
 
 @Component({
 	selector: "app-card",
-	template: ` <p>{{ this.rankString }}{{ this.suitString }}</p> `,
+	templateUrl: "./card.component.html",
 	styleUrls: ["./card.component.css"],
 })
 export class CardComponent {
@@ -38,19 +38,19 @@ export class CardComponent {
 		// suit
 		switch (this.card.suit) {
 			case 0: {
-				this.suitString = "♡";
+				this.suitString = "♥️";
 				break;
 			}
 			case 1: {
-				this.suitString = "♢";
+				this.suitString = "♦️";
 				break;
 			}
 			case 2: {
-				this.suitString = "♣";
+				this.suitString = "♣️";
 				break;
 			}
 			case 3: {
-				this.suitString = "♠";
+				this.suitString = "♠️";
 				break;
 			}
 			default: {
