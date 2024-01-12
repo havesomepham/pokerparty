@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  
   <meta charset="utf-8">
   <title>Pokerparty</title>
   <base href="/">
@@ -11,5 +12,19 @@
 </head>
 <body class="mat-typography">
   <app-root></app-root>
+
+  <!-- <script>
+    const socket = new WebSocket('ws://localhost:4200');
+
+    socket.addEventListener('message', (event) => {
+      document.getElementById('mainDisplay').innerText = event.data;
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === ' ') {
+        socket.send(' ');
+      }
+    });
+  </script> -->
 </body>
 </html>
