@@ -44,6 +44,12 @@ export class DealerService {
 
 	// shuffle this.deck in place
 	shuffleDeck(): void {
+		this.community = [];
+		this.playerList.forEach(player => {
+			player.hand = [];
+		});
+		this.generateDeck();
+		// TODO actually implement this
 		for (let i = this.deck.length - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1));
 			[this.deck[i], this.deck[j]] = [this.deck[j], this.deck[i]];

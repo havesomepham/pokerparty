@@ -29,11 +29,6 @@ export class AppComponent {
 		this.deal();
 	}
 
-	@HostListener('document:keypress', ['$event'])
-	handleKeyboardEvent(event: KeyboardEvent) { 
-		this.deal();
-	}
-
 	deal() {
 		console.log("REDEAL");
 		this.dealerService.shuffleDeck();
