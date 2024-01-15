@@ -19,9 +19,12 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { CardComponent } from './card/card.component';
 import { PlayerComponent } from './player/player.component';
 import { CommunityComponent } from './community/community.component';
+import { UserComponent } from './user/user.component';
+import { HostComponent } from './host/host.component';
+
 
 @NgModule({
-  declarations: [AppComponent, CardComponent, PlayerComponent, CommunityComponent],
+  declarations: [AppComponent, CardComponent, PlayerComponent, CommunityComponent, HostComponent, UserComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

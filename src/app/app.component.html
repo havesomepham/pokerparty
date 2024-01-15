@@ -3,14 +3,36 @@
   <span>PokerParty</span>
 </mat-toolbar>
 
+<router-outlet></router-outlet>
+
+
 <div class="content-wrapper">
+  <!-- <nav>
+    <a routerLink="/user">User</a>
+    <br>
+    <a routerLink="/host">Host</a>
+  </nav> -->
   <br>
-  <app-player *ngFor="let player of playerList" [player]="player"></app-player>
-  <app-community [community]="this.dealerService.community"></app-community>
+  @if(!isHost) {
+    <app-player  [player]="playerList[this.userId]"></app-player>
+  }
+  @if(isHost) {
+    <app-community [community]="this.dealerService.community"></app-community>
+  }
   <h1 *ngFor="let player of winners">{{ player.name }} wins via {{ this.dealerService.scoreHand(player.hand).name }}</h1>
 </div>
 <button (click)="deal()">
   <div>
     Deal!
+  </div>
+</button>
+<button (click)="toggleHost()">
+  <div>
+    Change view
+  </div>
+</button>
+<button (click)="incrementUserId()">
+  <div>
+    Change User
   </div>
 </button>

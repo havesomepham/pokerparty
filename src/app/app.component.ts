@@ -23,6 +23,8 @@ export class AppComponent {
 	dealerService: DealerService = inject(DealerService);
 	playerList: Player[] = [];
 	winners: Player[] = [];
+	isHost: boolean = true;
+	userId: number = 0;
 
 	ngOnInit() {
 		this.playerList = this.dealerService.getPlayerList();
@@ -35,5 +37,16 @@ export class AppComponent {
 		this.dealerService.dealHands();
 		this.dealerService.dealCommunityCards();
 		this.winners = this.dealerService.determineWinner();
+	}
+	
+	toggleHost() {
+		this.isHost = !this.isHost;
+	}
+
+	incrementUserId() {
+		this.userId++;
+		if (this.userId > this.playerList.length) {
+			this.userId = 0;
+		}
 	}
 }

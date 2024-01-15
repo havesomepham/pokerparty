@@ -1,5 +1,6 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, inject } from "@angular/core";
 import { Card } from "../card";
+import { DealerService } from "../dealer.service";
 
 @Component({
 	selector: "app-community",
@@ -8,4 +9,9 @@ import { Card } from "../card";
 })
 export class CommunityComponent {
 	@Input() community!: Card[];
+	// community!: Card[];
+
+	ngOnInit() {
+		// this.community = DealerService.community;
+	}
 }
