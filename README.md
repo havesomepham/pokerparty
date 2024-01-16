@@ -13,3 +13,10 @@ cd ~/pokerparty
 npm install
 sudo ng serve
 ```
+
+How to run on mobile (mac instructions):
+```bash
+echo '{ "host": "0.0.0.0"}' >.ember-cli //first time only
+ng serve --host 0.0.0.0
+```
+This should return two links. One for the local URL and the other network URL (comprised of host IP address + port number)
