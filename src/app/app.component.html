@@ -14,7 +14,7 @@
   </nav> -->
   <br>
   @if(!isHost) {
-    <app-player  [player]="playerList[this.userId]"></app-player>
+    <app-player  [player]="this.dealerService.playerList[this.userId]"></app-player>
   }
   @if(isHost) {
     <app-community [community]="this.dealerService.community"></app-community>

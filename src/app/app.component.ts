@@ -21,13 +21,12 @@ export class AppComponent {
 	title = "pokerparty";
 	// firestore: Firestore = inject(Firestore)
 	dealerService: DealerService = inject(DealerService);
-	playerList: Player[] = [];
 	winners: Player[] = [];
 	isHost: boolean = true;
 	userId: number = 0;
 
 	ngOnInit() {
-		this.playerList = this.dealerService.getPlayerList();
+		// this.playerList = this.dealerService.getPlayerList();
 		this.deal();
 	}
 
@@ -45,7 +44,7 @@ export class AppComponent {
 
 	incrementUserId() {
 		this.userId++;
-		if (this.userId > this.playerList.length) {
+		if (this.userId > this.dealerService.playerList.length) {
 			this.userId = 0;
 		}
 	}
