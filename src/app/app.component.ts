@@ -26,7 +26,6 @@ export class AppComponent {
 	userId: number = 0;
 
 	ngOnInit() {
-		// this.playerList = this.dealerService.getPlayerList();
 		this.deal();
 	}
 
